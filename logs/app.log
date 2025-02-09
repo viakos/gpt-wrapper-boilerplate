@@ -1,3 +1,0 @@
-[2025-02-09T09:02:05.121Z] [INFO] API Request Received {"method":"GET","url":"/api/example"}
-[2025-02-09T09:32:36.573Z] [INFO] Test log - info {"endpoint":"/api/test-logs"}
-[2025-02-09T09:32:36.573Z] [WARN] Test log - warning {"user":"test_user"}
