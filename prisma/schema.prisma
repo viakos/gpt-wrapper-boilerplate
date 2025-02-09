@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite" // Change to "postgresql" later
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String  @id @default(uuid())
+  email     String  @unique
+  name      String?
+  role      Role    @default(FREE)
+  createdAt DateTime @default(now())
+}
+
+model Log {
+  id        String  @id @default(uuid())
+  type      String  // "error" or "app"
+  message   String
+  metadata  Json?
+  createdAt DateTime @default(now())
+}
+
+model Setting {
+  id    String @id @default(uuid())
+  key   String @unique
+  value String
+}
+
+enum Role {
+  FREE
+  PREMIUM
+  ADMIN
+}
